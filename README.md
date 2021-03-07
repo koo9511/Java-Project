@@ -1,7 +1,7 @@
 # Dev. Beemo
 
-#### backjoon
+#### Baekjoon
 ## https://www.acmicpc.net/user/koo9511
 
-#### introduce myself
+#### Introduce myself
 ## https://koo9511.github.io
