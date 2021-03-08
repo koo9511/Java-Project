@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?> <!-- 꼭 있어야함 -->
+<!DOCTYPE configuration PUBLIC
+"-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+        <setting name="cacheEnabled" value="false" />
+        <setting name="jdbcTypeForNull" value="NULL" />
+    </settings>
+	<typeAliases>
+<!-- 		<typeAlias type="com.kh.danim.user.model.vo.User" alias="User" />
+ -->		
+	</typeAliases>
+	  
+	<mappers>
+		<mapper resource="mappers/user-mapper.xml" />
+	</mappers>
+</configuration>

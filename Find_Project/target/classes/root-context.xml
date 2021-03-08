@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+   <!-- Root Context: defines shared resources visible to all other web components -->
+      
+   <!-- DataSource 등록 -->
+   <bean id="dataSource"
+      class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+   <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+   <property name="url" value="jdbc:mysql://115.68.185.102:3306/remote?useSSL=false&amp;serverTimezone=Asia/Seoul" />
+   <!-- <property name="url" value="jdbc:mysql://115.68.185.102:3306?useSSL=false&amp;serverTimezone=Asia/Seoul" /> -->
+   <property name="username" value="remote_user" />
+   <property name="password" value="rem0teU$ser01" />
+   </bean>
+
+   <!-- Spring 하고 MyBatis 윈도우설정 -->
+   <bean id="sqlSession"
+      class="org.mybatis.spring.SqlSessionFactoryBean">
+   <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+   <property name="dataSource" ref="dataSource"></property>
+   </bean>
+
+   <bean class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+      <constructor-arg ref="sqlSession"></constructor-arg>
+   </bean>
+</beans>
+
+
+
+
+
+
+

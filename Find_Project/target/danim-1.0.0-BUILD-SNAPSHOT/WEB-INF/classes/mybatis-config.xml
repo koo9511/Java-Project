@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?> <!-- 꼭 있어야함 -->
+<!DOCTYPE configuration PUBLIC
+"-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.kh.danim.user.model.vo.User" alias="User" />
+		<typeAlias type="com.kh.danim.notice.model.vo.Notice" alias="Notice" />
+		<typeAlias type="com.kh.danim.key.model.vo.EmailKey" alias="Key" />
+	</typeAliases>
+	  
+	<mappers>
+		<mapper resource="mappers/user-mapper.xml" />
+		<mapper resource="mappers/notice-mapper.xml" />
+		<mapper resource="mappers/key-mapper.xml" />
+	</mappers>
+</configuration>

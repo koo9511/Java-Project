@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="keyMapper">
+
+	
+	<insert id="keyinsert" parameterType="string" useGeneratedKeys="true">
+		insert into emailkey values(#{value})
+	</insert>
+	
+	<select id="keyCheck" parameterType="string" resultType="Key">
+		select * from emailkey where key = #{value}
+	</select>
+	
+	<delete id="keyDelete" parameterType="string">
+		delete from emailkey where key = #{value}
+	</delete>
+
+</mapper>
