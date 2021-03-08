@@ -1,0 +1,173 @@
+/*
+  media=(prefers-color-scheme: dark)
+*/
+ /* @media (prefers-color-scheme: dark) {
+  body {
+    background: #323232 ;
+    color: #fff;
+    transition: .5s background, .5s color !important;
+    
+  }
+  
+div {
+    background: #323232 !important;
+    color: #fff;
+    transition: .5s background, .5s color !important;
+} 
+
+  header {
+    background: #323232 !important;
+    color: #fff;
+    transition: .5s background !important;
+  }
+  
+  footer {
+    background: #323232 !important;
+    color: #fff;
+    transition: .5s background !important;
+  }
+  input{
+    background: #323232 !important;
+    color: #fff;
+  }
+  input.primary{
+  
+    border: 1px solid #fff;
+    color: #fff
+  }
+  form{
+    background: #323232 !important;
+    color: #fff;
+    transition: .5s background, .5s color !important;
+  }
+  table{
+    background: #323232 !important;
+    color: #fff;
+    transition: .5s background, .5s color !important;
+  }
+  table tr{
+    background: #323232 !important;
+    color: #fff;
+    transition: .5s background, .5s color !important;
+  }
+  a{
+    background: #323232 !important;
+    color: #fff;
+    transition: .5s background, .5s color !important;
+  }
+  span{
+    background: #323232 !important;
+    color: #fff;
+    transition: .5s background, .5s color !important;
+  }
+  textarea{
+    background: #323232 !important;
+    color: #fff;
+    transition: .5s background, .5s color !important;
+  }
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  select:focus,
+  textarea:focus {
+    background: #323232 !important;
+    color: #fff;
+ } */
+
+	body {
+        background: #323232 ;
+        color: #fff;
+        transition: .5s background, .5s color !important;
+        box-shadow: 1px 1px 1px #323232 !important;
+      }
+      
+    div {
+        background: #323232 !important;
+        color: #fff;
+        transition: .5s background, .5s color !important;
+        
+    } 
+
+      header {
+        background: #323232 !important;
+        color: #fff;
+        transition: .5s background !important;
+      }
+      
+      footer {
+        background: #323232 !important;
+        color: #fff;
+        transition: .5s background !important;
+      }
+      input{
+        background: #323232 !important;
+        color: #fff;
+        box-shadow: 1px 1px 1px #323232 !important;
+      }
+      input.primary{
+        /* background: black !important; */
+        border: 1px solid #fff;
+        color: #fff
+      }
+      form{
+        background: #323232 !important;
+        color: #fff;
+        transition: .5s background, .5s color !important;
+      }
+
+      table{
+        background: #323232 !important;
+        color: #fff;
+        transition: .5s background, .5s color !important;
+      }
+      table tr{
+        background: #323232 !important;
+        color: #fff;
+        transition: .5s background, .5s color !important;
+      }
+      table tr td {
+        border-color: #c9c9c9 !important;
+      }
+      a{
+        background: #323232 !important;
+        color: #fff;
+        transition: .5s background, .5s color !important;
+        
+      }
+      span{
+        background: #323232 !important;
+        color: #fff;
+        transition: .5s background, .5s color !important;
+      }
+      textarea{
+        background: #323232 !important;
+        color: #fff;
+        transition: .5s background, .5s color !important;
+      }
+      input[type="text"]:focus,
+		  input[type="password"]:focus,
+		  input[type="email"]:focus,
+		  input[type="tel"]:focus,
+		  select:focus,
+		  textarea:focus {
+        background: #323232 !important;
+        color: #fff;
+      }
+      button.btn:hover{
+        background: #323232;
+      }
+      button.searchButton {
+        border: 1px solid #4d4c4c !important; 
+        background: #4d4c4c !important;
+      }
+      input.searchTerm {
+        border: 3px solid #4d4c4c !important;
+      }
+      
+    /* } */
+      /* button:hover{
+        background: #323232 !important;
+        color: #fff;
+      } */
+  /* } */
