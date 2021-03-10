@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="div#" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="div#"/>
+			<item value="solid 2px #FF7E7E"/>
+			<item value="solid 2px #FFE"/>
+			<item value="solid 2px "/>
+			<item value="juminCheck"/>
+			<item value="checkjumin"/>
+			<item value="jumin"/>
+			<item value="idcheck"/>
+			<item value="enroll.html"/>
+			<item value="login.html"/>
+			<item value="index.html"/>
+			<item value="main"/>
+			<item value="info"/>
+			<item value="#2478FF"/>
+			<item value="intro"/>
+		</list>
+		<list key="replacehistory">
+			<item value="solid 1px #c9c9c9"/>
+			<item value="enroll.jsp"/>
+			<item value="login.jsp"/>
+			<item value="index.jsp"/>
+			<item value="login"/>
+			<item value="#489CFF"/>
+			<item value="#"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="294" key="DIALOG_WIDTH"/>
+		<item value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont" key="DIALOG_FONT_NAME"/>
+		<item value="408" key="DIALOG_HEIGHT"/>
+		<item value="983" key="DIALOG_X_ORIGIN"/>
+		<item value="148" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

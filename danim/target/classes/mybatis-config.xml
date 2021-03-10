@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?> <!-- 꼭 있어야함 -->
+<!DOCTYPE configuration PUBLIC
+"-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+        <setting name="cacheEnabled" value="false" />
+        <setting name="jdbcTypeForNull" value="NULL" />
+    </settings>
+	<typeAliases>
+		<typeAlias type="com.kh.danim.user.model.vo.User" alias="User" />
+		<typeAlias type="com.kh.danim.user.model.vo.Chatting" alias="Chatting" />
+		<typeAlias type="com.kh.danim.notice.model.vo.Notice" alias="Notice" />
+		<typeAlias type="com.kh.danim.key.model.vo.EmailKey" alias="Key" />
+		<typeAlias type="com.kh.danim.contact.model.vo.Contact" alias="Contact" />
+		<typeAlias type="com.kh.danim.helpcenter.model.vo.HelpCenter" alias="HelpCenter" />
+		<typeAlias type="com.kh.danim.payment.model.vo.Payment" alias="Payment" />
+		<typeAlias type="com.kh.danim.helper.model.vo.Helper" alias="Helper" />
+		<typeAlias type="com.kh.danim.help.model.vo.Help" alias="Help" />
+		<typeAlias type="com.kh.danim.admin.model.vo.Admin" alias="Admin" />
+		
+	</typeAliases>
+	  
+	<mappers>
+		<mapper resource="mappers/user-mapper.xml" />
+		<mapper resource="mappers/notice-mapper.xml" />
+		<mapper resource="mappers/key-mapper.xml" />
+		<mapper resource="mappers/contact-mapper.xml" />
+		<mapper resource="mappers/helpcenter-mapper.xml" />
+		<mapper resource="mappers/pay-mapper.xml" />
+		<mapper resource="mappers/help-mapper.xml" />
+		<mapper resource="mappers/helper-mapper.xml" />
+		<mapper resource="mappers/admin-mapper.xml" />
+	</mappers>
+</configuration>

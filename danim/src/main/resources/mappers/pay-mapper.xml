@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="paymentMapper">
+
+	<resultMap id="resultPayment" type="Payment">
+		<id property="payno" column="payno" />
+		<result property="paymentdate" column="paymentdate" />
+		<result property="scharge" column="scharge" />
+		<result property="paymoney" column="paymoney" />
+		<result property="division" column="division" />
+		<result property="userid" column="userid" />
+		<result property="category" column="category" />
+		<result property="minusmoney" column="minusmoney" />
+		<result property="count" column="count" />
+		<result property="eventdate" column="eventdate" />
+		<result property="eventcount" column="eventcount" />
+		
+	</resultMap>
+
+	<!-- 환전한 금액 내역 -->
+	<!-- <select id="paySelect" resultType="Payment">
+		select * from paylist where userid = #{userid}
+	</select> -->
+	
+	<!-- 이벤트 참여한 아이디, 날짜, 카운트값 찾기 -->
+	<select id="eventLsit" resultType="Payment">
+		select userid,eventdate,eventcount from event where userid = #{userid}
+	</select>
+	
+	<!-- 결제내력 리스크 카운트 -->
+	<select id="listCount" resultType="_int">
+		select count(*) from paylist
+	</select>
+	
+	<!-- 결제 내역 출력 -->
+	<select id="paymentList" parameterType="hashmap" resultMap="resultPayment">
+	<![CDATA[
+		select * 
+			from (select rownum rnum, paymentdate, scharge, paymoney, division, userid, minusmoney, category
+				from (select *
+					from paylist where userid = #{userid}
+				order by paymentdate desc))
+		where rnum >= #{startRow} and rnum <= #{endRow}
+	]]>
+	</select>
+	
+	<!-- requestScope.user.값 꺼내기 -->
+	<select id="userSelect" parameterType="string" resultType="Payment">
+		select * from paylist inner join users on paylist.userid = users.userid
+	</select>
+	
+	<!-- 코인 결제 -->
+	<insert id="insertMoney" parameterType="Payment">
+		insert into paylist(userid, paymoney, scharge, division, category, minusmoney) 
+			values( #{userid}, #{paymoney}, #{scharge}, #{division}, #{category}, #{minusmoney})
+	</insert>
+
+	<!-- 코인 전환 -->
+	<insert id="useCoin" parameterType="Payment">
+		insert into paylist(userid, paymoney, category) values(#{userid}, #{paymoney}, #{category})
+	</insert>
+	
+	
+</mapper>
+
+
+
+
+
+
+

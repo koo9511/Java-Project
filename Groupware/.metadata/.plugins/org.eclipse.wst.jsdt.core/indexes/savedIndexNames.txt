@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+/Users/koogunmo/Desktop/Project_Workspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1208027884.index
+1726079349.index
+1498737526.index
+3584305529.index
+34146516.index
+426800065.index
+2881062433.index
+2935114245.index

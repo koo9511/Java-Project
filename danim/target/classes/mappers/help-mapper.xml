@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="helpMapper">
+
+
+<select id="helpCount" parameterType="hashmap" resultType="Help">
+
+	with temp as (
+	select category, count(*) as co
+	from help h, users u
+	where
+<![CDATA[
+	black = 'N' and h.helpid = u.userid and helpid !=#{helpid} and status='대기중' and  time > to_char(sysdate,'yyyy.mm.dd hh24:mi') and distancelatlng(#{lat},#{lng},to_number(locationcodelat),to_number(locationcodelng))<5
+	group by category
+	)
+	select * from temp
+	pivot (max(co) for category in('청소해주기' as cleaningnum,'물건배달해주기' as deliverynum,'쇼핑해주기' as shoppingnum,'물건보관해주기' as keepingnum,'줄서주기' as lineupnum,'돌봐주기' as carenum,'역할대행해주기' as cosplaynum,'전문가/비지니스' as professionalnum,'물건옮겨주기' as movingnum))
+]]>
+</select>
+
+<select id="selectHelpList" parameterType="hashmap" resultType="Help">
+select *
+from (select row_number() over(order by help.dis) rnum, help.*
+		from (select help.*, distancelatlng(#{lat},#{lng},to_number(locationcodelat),to_number(locationcodelng)) as dis
+			from help help, users u
+		<if test="searchname != null">
+		where helptitle like #{searchname} and 
+			<if test="searchcate != null">
+			category like #{searchcate} and
+			</if>
+		</if>
+		<if test="searchname == null">
+		where 
+			<if test="searchcate != null">
+			category like #{searchcate} and
+			</if>
+	</if>	
+<![CDATA[
+	black = 'N' and u.userid = help.helpid and status = '대기중' and  time > to_char(sysdate,'yyyy.mm.dd hh24:mi') and
+	helpid !=#{helpid} and distancelatlng(#{lat},#{lng},to_number(locationcodelat),to_number(locationcodelng))<5
+	order by dis
+) help
+]]>
+)
+<if test="startrow != null and endrow != null">
+where rnum between #{startrow} and #{endrow}
+</if>
+</select>
+
+<select id="listCount" parameterType="hashmap" resultType="int">
+	select count(*)
+	from help h, users u
+	
+	<if test="searchname != null">
+	where helptitle like #{searchname} and 
+		<if test="searchcate != null">
+		category like #{searchcate} and
+		</if>
+	</if>
+	<if test="searchname == null">
+	where 
+		<if test="searchcate != null">
+		category like #{searchcate} and
+		</if>
+	</if>	
+<![CDATA[
+	status = '대기중' and u.userid = h.helpid and time > to_char(sysdate,'yyyy.mm.dd hh24:mi') and helpid !=#{helpid} and distancelatlng(#{lat},#{lng},to_number(locationcodelat),to_number(locationcodelng))<5
+]]>
+</select>
+
+<select id="selectOneHelp" parameterType="int" resultType="Help">
+	select h.* , u.phone, u.nickname, u.review, u.danimcount
+	from help h, users u
+	where h.helpid = u.userid and helpno = #{helpno}
+</select>
+
+<select id="selectOneMatching" parameterType="int" resultType="Help">
+	select k.*, u.phone helperphone, u.nickname helpername, u.danimcount helperdanimcount, u.review helperreview
+	from(
+	select h.* , u.phone, u.nickname, u.review, u.danimcount
+	from help h, users u
+	where h.helpid = u.userid and helpno = #{value}) k, users u
+  	where k.helperid = u.userid
+</select>
+
+<select id="getHelperList" parameterType="int" resultType="string">
+select helperlist from help where helpno=#{helpno}
+</select>
+
+<select id="matchingCount" parameterType="string" resultType="int">
+select count(*) from help where helperid=#{userid}
+</select>
+
+<select id="cancelStatus" parameterType="int" resultType="string">
+select cancelstatus from help where helpno=#{helpno}
+</select>
+
+<select id="matchingStatus" parameterType="int" resultType="string">
+select matchingstatus from help where helpno=#{helpno}
+</select>
+
+<select id="howMuch" parameterType="string" resultType="int">
+select money from users where userid = #{helpid}
+</select>
+
+<insert id="insertHelp" parameterType="Help">
+	insert into help(HELPNO,HELPID,HELPERID,ROADADDRESS,DETAILADDRESS,LOCATIONCODELAT,LOCATIONCODELNG,LOCGROUP
+	,TARGETROADADDRESS,TARGETDETAILADDRESS,TIME,HELPDATE,ENDTIME,RESERDATE,RESERTIME,USINGTIME
+	,HELPTITLE,CONTENTS,MATCHING,PAY,PAYM,STATUS,CATEGORY,HELPERLIST,IMAGE,RENAMEIMAGE,MATCHINGSTATUS) 
+	values (HELP_NO_SQ.nextval, #{helpid}, null, #{roadaddress}, #{detailaddress}, #{locationcodelat}, #{locationcodelng}, #{locgroup}
+	, null, null, #{time}, sysdate, #{endtime}, #{reserdate}, #{resertime}, #{usingtime}, #{helptitle}, #{contents}, #{matching}
+	, #{pay}, #{paym}, default, #{category}, null, #{image}, #{renameimage}, null)
+</insert>
+
+
+
+<insert id="openChat" parameterType="hashmap">
+insert into chatting(chatno, chathelper, chathelp) values(
+#{helpno},#{helperid},(select helpid from help where helpno=#{helpno})
+)
+</insert>
+
+
+<delete id="helpDelete"  parameterType="int">
+delete from help where helpno=#{helpno}
+</delete>
+
+<delete id="helpAfterDelete">
+<![CDATA[
+delete from help where time < to_char(sysdate,'yyyy.mm.dd hh24:mi')
+]]>
+</delete>
+
+<update id="helpUpdate" parameterType="Help">
+update help set roadaddress = #{roadaddress}, detailaddress=#{detailaddress}, locationcodelat=#{locationcodelat}
+, locationcodelng=#{locationcodelng}, locgroup=#{locgroup}, time=#{time}, endtime=#{endtime}, reserdate=#{reserdate}, resertime=#{resertime}
+, usingtime=#{usingtime}, helptitle=#{helptitle}, contents=#{contents}, matching=#{matching}, pay=#{pay}, paym=#{paym}
+, category=#{category}, image=#{image}, renameimage=#{renameimage}
+where helpno=#{helpno}
+</update>
+
+<update id="setHelperList" parameterType="hashmap">
+update help set helperlist=#{helperlist} where helpno=#{helpno}
+</update>
+
+<update id="setHelperId" parameterType="hashmap">
+update help set helperid=#{helperid}, status='진행중' where helpno=#{helpno}
+</update>	
+
+<!-- <update id="matchingStatus" parameterType="hashmap">
+update help set matchingstatus=#{matchingstatus} where helpno=#{helpno}
+</update> -->
+
+<update id="cancelStatusUpdate" parameterType="hashmap">
+update help set 
+cancelstatus=#{status},  
+<if test="status == null">
+status=
+case
+when matchingstatus is not null then '완료대기중' 
+else '진행중'
+end
+</if>
+<if test="status != null">
+status='취소대기중' 
+</if>
+where helpno=#{helpno}
+</update>
+
+
+<update id="matchingStatusUpdate" parameterType="hashmap">
+update help set matchingstatus=#{status}, 
+<if test="status == null">
+status=
+case
+when cancelstatus is not null then '취소대기중' 
+else '진행중' 
+end
+</if>
+<if test="status != null">
+status='완료대기중' 
+</if>
+where helpno=#{helpno}
+</update>
+
+<update id="updateHelpListToHelperId" parameterType="hashmap">
+update help set helperid=#{id} where helpno=#{helpno}
+</update>
+
+<update id="removeHelperId" parameterType="int">
+update help set helperid=null, status='대기중', cancelstatus=null, matchingstatus=null where helpno=#{helpno}
+</update>
+
+<update id="updateStatusToFinal" parameterType="int">
+update help set status='완료', cancelstatus=null, matchingstatus=null where helpno=#{helpno}
+</update>
+
+
+</mapper>

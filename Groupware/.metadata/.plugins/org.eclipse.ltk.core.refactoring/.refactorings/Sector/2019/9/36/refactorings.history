@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Sector/web/views/service.html&apos; to &apos;servicecenter.html&apos;" description="Rename resource &apos;service.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="web/views/service.html" name="servicecenter.html" stamp="1567476302249" updateReferences="true"/>
+</session>

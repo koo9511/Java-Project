@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="noticeMapper">
+
+	<resultMap id="resultNotice" type="Notice">
+		<id property="noticeno" column="noticeno" />
+		<result property="noticetitle" column="noticetitle" />
+		<result property="noticedate" column="noticedate" />
+		<result property="noticecontent" column="noticecontent" />
+	</resultMap>
+	
+	<select id="listCount" resultType="_int">
+		select count(*) from notice
+	</select>
+	
+	<select id="noticeList" parameterType="hashmap" resultMap="resultNotice">
+	<![CDATA[
+		select * 
+		from (select rownum rnum, noticeno, noticetitle, noticedate, noticecontent
+			  	from (select *
+			  			from notice
+			  			order by noticeno desc))
+		where rnum >= #{startRow} and rnum <= #{endRow}
+	]]>
+	</select>
+
+</mapper>

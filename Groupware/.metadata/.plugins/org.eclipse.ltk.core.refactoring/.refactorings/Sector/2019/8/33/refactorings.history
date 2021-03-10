@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Sector/web/views/generic.html&apos; to &apos;order.html&apos;" description="Rename resource &apos;generic.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="web/views/generic.html" name="order.html" stamp="1565944970903" updateReferences="true"/>
+</session>

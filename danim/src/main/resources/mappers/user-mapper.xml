@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userMapper">
+
+	<select id="loginCheck" parameterType="User" resultType="User">
+		select *
+		from users where userid = #{userid} and userpwd = #{userpwd}
+	</select>
+
+	<insert id="userInsert" parameterType="User"
+		useGeneratedKeys="true">
+		insert into users values(#{nickname}, #{username},
+		#{userid}, #{userpwd}, #{usernum}, #{phone}, #{ground}, default,
+		default, default, default, default, default, default, default, default)
+	</insert>
+
+	<select id="userSelect" parameterType="string" resultType="User">
+		select * from users where userid = #{value}
+	</select>
+
+	<insert id="kuserInsert" parameterType="User">
+		insert into users
+		values(#{nickname}, #{username}, #{userid}, default, default,
+		#{phone}, #{ground}, default, default, default, default,default,
+		default, default, default, default)
+	</insert>
+
+	<update id="userUpdate" parameterType="User">
+		update users set nickname
+		= #{nickname}, userid = #{userid}, username = #{username}, accountname
+		= #{accountname}, account = #{account}, phone = #{phone}, ground =
+		#{ground}, danimcount = #{danimcount}, enrolldate = #{enrolldate}
+		where userid = #{userid}
+	</update>
+	<update id="userPassUpdate" parameterType="User">
+		update users set userpwd = #{userpwd} where userid = #{userid}
+	</update>
+	
+	<select id="nicknameCheck" parameterType="string" resultType="User">
+		select * from users where nickname=#{value}
+	</select>
+	
+	<select id="phoneCheck" parameterType="string" resultType="User">
+		select * from users where phone=#{value}
+	</select>
+	
+	<select id="idCheck" parameterType="string" resultType="User">
+		select * from users where userid=#{value}
+	</select>
+	
+	<select id="selectAllUsers" resultType="_int">
+		select count(*) from users
+	</select>
+	
+	<select id="listCount" parameterType="string" resultType="_int">
+		select count(*) from help where helpid = #{value} or helperid = #{value}
+	</select>
+	
+	<select id="successCount" parameterType="string" resultType="_int">
+		select count(*) from help where helpid = #{value} and status = '완료'
+	</select>
+	
+	<select id="selectList" parameterType="hashmap" resultType="Help">
+		<![CDATA[
+		select * 
+		from (select rownum rnum, helpno, helpid, helperid, time, status, helpdate, helptitle, category
+			  	from (select *
+			  			from help
+			  			where helpid = #{userid} or helperid = #{userid}
+			  			order by helpno desc)
+			  )
+		where rnum >= #{startRow} and rnum <= #{endRow}
+	]]>
+	</select>
+	
+	<select id="selectList1" parameterType="string" resultType="Help">
+		select * 
+		from help
+		where helpid = #{value} or helperid = #{value}
+		order by helpno desc
+	</select>
+	
+	<select id="selectHelp" parameterType="_int" resultType="Help">
+		select * from help where helpno = #{value}
+	</select>
+	
+	<select id="selectChat" parameterType="_int" resultType="Chatting">
+		select * from chatting where chatno = #{value}
+	</select>
+	
+	<update id="inputText" parameterType="Chatting">
+		update chatting set chatcontent = #{chatcontent}, chatdate = to_char(sysdate,'ddHH:mi:ss') where chatno = #{chatno}
+	</update>
+	
+	<update id="updateText" parameterType="Chatting">
+		update chatting set chatcontent = #{chatcontent}, chatdate = to_char(sysdate,'ddHH:mi:ss') where chatno = #{chatno}
+	</update>
+	
+	<select id="contentCheck" parameterType="Chatting" resultType="_int">
+	<![CDATA[
+		select * 
+		from chatting 
+		where (select chatdate
+				from chatting
+				where chatno = #{chatno}
+				) > #{chatcontent}
+	]]>
+	</select>
+	
+	<!-- // 남규쓰 작업 --><!-- 충전한 금액 변환 -->
+	<update id="updateMoney" parameterType="User">
+		update users set money = #{money} where userid = #{userid}
+	</update>
+	
+	<!-- // 남규쓰 작업 --><!-- 코인 전환 금액 변환 -->
+	<update id="useCoin" parameterType="User">
+	<![CDATA[
+		update users set money = #{money} where userid <= #{userid}
+	]]>
+	</update>
+	
+	<!-- 남규쓰 이벤트 출석체크 카운트다운 넣기  -->
+	<!-- <update id="eventUpdate" parameterType="User">
+		update users set event = #{check} where userid = #{userid}
+	</update> -->
+	
+	<!-- 남규쓰 이벤트 출석체크 카운트다운 넣기  -->
+	<select id="eventCheck" parameterType="string" resultType="User">
+		select * from users where userid=#{userid}
+	</select>
+	
+	<select id="searchevent" parameterType="string" resultType="User">
+		select * from users where userid = #{userid}
+	</select>
+	
+	<!-- 남규쓰 (출석체크 시 기존값 + 새로운값 누적하기) -->
+	<update id="updateEvent" parameterType="User">
+		update users set event = event||#{event} where userid = #{userid}
+	</update>
+	
+	<select id="searchmoney" parameterType="string" resultType="User">
+		select * from users where userid = #{userid}
+	</select>
+</mapper>

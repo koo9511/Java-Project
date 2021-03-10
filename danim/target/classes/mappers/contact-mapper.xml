@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="contactMapper">
+
+
+	<insert id="contactSend" parameterType="Contact" >
+		insert into contact values(contact_no_sq.nextval, #{writername}, #{writeremail}, #{contacttitle}, #{contactcontent},default,default)
+	</insert>
+	
+	<select id="adminListCount" resultType="_int">
+		select count(*) from contact
+	</select>
+	
+	<select id="adminSelectList" parameterType="hashmap" resultType="Contact">
+	<![CDATA[
+		select * 
+		from (select rownum rnum, contactno, writername, writeremail, contacttitle, contactcontent, contactstatus, contactdate
+				from (select *
+						from contact
+						order by contactno desc))
+		where rnum >= #{startRow} and rnum <= #{endRow}
+	]]>
+	</select>
+	
+	<select id="adminSelectOne" parameterType="_int" resultType="Contact">
+		select * from contact where contactno = #{value}
+	</select>
+	
+	<update id="adminAnswer" parameterType="_int">
+		update contact set contactstatus = '답변완료' where contactno = #{value}
+	</update>
+</mapper>

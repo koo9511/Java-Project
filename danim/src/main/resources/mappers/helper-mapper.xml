@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="helperMapper">
+
+
+<insert id="insertHelper" parameterType="Helper">
+INSERT INTO HELPER(HELPERNO,HELPERID,HELPERPHONE,HELPERTITLE,HELPERCONTENTS,HELPERREGISTTIME,HELPERREGISTDATE,HELPERPAY
+,HELPERPAYM,HELPERCATE,HELPERLOC,HELPERIMAGE,HELPERRENAMEIMAGE) VALUES(HELPER_NO_SQ.NEXTVAL,#{helperid},#{helperphone}
+,#{helpertitle},#{helpercontents},#{helperregisttime},#{helperregistdate},#{helperpay},#{helperpaym},#{helpercate}
+,#{helperloc},#{helperimage},#{helperrenameimage})
+</insert>
+<select id="helperCount" parameterType="string" resultType="Helper">
+	WITH TEMP AS (
+	SELECT HELPERCATE, COUNT(*) AS C
+	FROM HELPER
+	WHERE HELPERID != #{userid}
+	GROUP BY HELPERCATE
+	)
+	SELECT * FROM TEMP
+	PIVOT (MAX(C) FOR HELPERCATE IN('청소해주기' AS CLEANINGNUM,'물건배달해주기' AS DELIVERYNUM,'쇼핑해주기' AS SHOPPINGNUM,'물건보관해주기' AS KEEPINGNUM,'줄서주기' AS LINEUPNUM,'돌봐주기' AS CARENUM,'역할대행해주기' AS COSPLAYNUM,'전문가비지니스' AS PROFESSIONALNUM,'물건옮겨주기' AS MOVINGNUM))
+</select>
+
+<select id="selectHelperList" parameterType="hashmap" resultType="Helper">
+SELECT *
+FROM (SELECT ROW_NUMBER() OVER(ORDER BY HELPERNO DESC) RNUM, HELPER.*
+		FROM HELPER
+		<if test="searchname != null">
+		WHERE HELPERTITLE LIKE #{searchname} AND 
+			<if test="searchcate != null">
+			HELPERCATE LIKE #{searchcate} AND
+			</if>
+		</if>
+		<if test="searchname == null">
+		WHERE 
+			<if test="searchcate != null">
+			HELPERCATE LIKE #{searchcate} AND
+			</if>
+		</if>	
+		HELPERID !=#{loginid} 
+) HELPER
+<if test="startrow != null and endrow != null">
+WHERE RNUM BETWEEN #{startrow} AND #{endrow}
+</if>
+</select>
+
+<select id="howMuch" parameterType="string" resultType="int">
+SELECT MONEY FROM USERS WHERE USERID = #{userid}
+</select>
+
+<select id="listCount" parameterType="hashmap" resultType="_int">
+	SELECT COUNT(*)
+	FROM HELPER
+	<if test="searchname != null">
+	WHERE HELPERTITLE LIKE #{searchname} AND 
+		<if test="searchcate != null">
+		HELPERCATE LIKE #{searchcate} AND
+		</if>
+	</if>
+	<if test="searchname == null">
+	WHERE 
+		<if test="searchcate != null">
+		HELPERCATE LIKE #{searchcate} AND
+		</if>
+	</if>	
+	HELPERID != #{loginid}
+</select>
+
+<select id="helperDetail" parameterType="int" resultType="Helper">
+SELECT H.* , U.DANIMCOUNT HELPERCOUNT, U.REVIEW HELPERREVIEW, U.NICKNAME HELPERNICKNAME, U.PHONE HELPERPHONE
+	FROM HELPER H, USERS U
+	WHERE H.HELPERID = U.USERID AND HELPERNO = #{helperno}
+</select>
+
+<delete id="helperDelete" parameterType="int">
+DELETE HELPER WHERE HELPERNO=#{helperno}
+</delete>
+
+<update id="helperUpdate" parameterType="Helper">
+UPDATE HELPER SET HELPERTITLE = #{helpertitle}, HELPERCONTENTS=#{helpercontents}, HELPERREGISTTIME=#{helperregisttime}
+, HELPERREGISTDATE=#{helperregistdate}, HELPERPAY=#{helperpay}, HELPERPAYM=#{helperpaym}, HELPERCATE=#{helpercate}, HELPERLOC=#{helperloc}
+, HELPERIMAGE=#{helperimage}, HELPERRENAMEIMAGE=#{helperrenameimage}
+WHERE HELPERNO=#{helperno}
+</update>
+
+
+</mapper>
