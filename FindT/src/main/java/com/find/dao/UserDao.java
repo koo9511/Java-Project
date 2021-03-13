@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.find.vo.Admin;
 
-@Repository("adminDao")
-public class AdminDao {
+@Repository("userDao")
+public class UserDao {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
