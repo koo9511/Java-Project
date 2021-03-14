@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik');
-.credit {
-  position: fixed;
-  right: 2rem;
-  bottom: 2rem;
-  color: white;
-}
-.credit a {
-  color: inherit;
-}
+
 body{
   margin: 0;
   padding: 0;
@@ -25,7 +17,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color .1s;
+  transition: background-color .2s;
 }
 
 
@@ -34,7 +26,8 @@ body{
   width: 40rem;
   height: 40rem;
   border-radius: 100%;
-  background: linear-gradient(40deg, #FF0080,#FF8C00 70%);
+  /* background: linear-gradient(40deg, #FF0080,#FF8C00 70%); */
+  background: linear-gradient(20deg, #f767cc,#ffae00 80%);
   position: absolute;
   z-index: 1;
   left: 50%;
@@ -105,7 +98,8 @@ body{
   border-radius: 100%;
   width: 8rem;
   height: 8rem;
-  background: linear-gradient(40deg, #FF0080,#FF8C00 70%);
+  /* background: linear-gradient(40deg, #FF0080,#FF8C00 70%); */
+  background: linear-gradient(20deg, #f767cc,#ffae00 80%);
   margin: auto;
 }
 .crescent {
@@ -127,11 +121,11 @@ p {
   font-weight: bolder;
   margin: 3rem 0 .2rem 0;
 }
-label, .toggle {
+label.toggle-switch, .toggle {
   height: 2.8rem;
   border-radius: 100px;
 }
-label {
+label.toggle-switch {
   width: 100%;
   background-color: rgba(0,0,0,.1);
   border-radius: 100px;
@@ -200,7 +194,7 @@ label {
   opacity: .55;
   font-size: 90%;
   cursor: pointer;
-  transition: all 2s ease;
+  transition: all 0.5s ease;
 }
 .skip p:hover {
    text-decoration: underline;
@@ -248,53 +242,107 @@ label {
 
 
 /* -------- Switch Styles ------------*/
-[type="checkbox"] {
+#switch {
   display: none;
 }
 /* Toggle */
-[type="checkbox"]:checked + .app .toggle{
+#switch:checked + .app .toggle{
   transform: translateX(100%);
   background-color: #34323D;
 }
-[type="checkbox"]:checked + .app .dark{
+#switch:checked + .app .dark{
   opacity: 1;
 }
-[type="checkbox"]:checked + .app .light{
+#switch:checked + .app .light{
   opacity: .5;
 }
 /* App */
-[type="checkbox"]:checked + .app .body{
+#switch:checked + .app .body{
   background-color:  #26242E;
   color: white;
 }
 /* Circle */
-[type="checkbox"]:checked + .app .crescent{
+#switch:checked + .app .crescent{
   transform: scale(1);
   background: #26242E;
 }
-[type="checkbox"]:checked + .app .circle{
+#switch:checked + .app .circle{
   background: linear-gradient(40deg, #8983F7, #A3DAFB 70%);
 }
-[type="checkbox"]:checked + .app .main-circle{
+#switch:checked + .app .main-circle{
   background: linear-gradient(40deg, #8983F7, #A3DAFB 70%);
+}
+/* lgoin */
+#switch:checked + .app .login-input {
+    border: 2px solid #c5d4f5;
+}
+#switch:checked + .app #login-btn {
+    background: #c5d4f5;
+    color: #34323D;
 }
 /* Fab */
-[type="checkbox"]:checked + .app .fab{
+#switch:checked + .app .fab{
   background-color: #34323D;
 }
-[type="checkbox"]:checked + .app .arrow,
-[type="checkbox"]:checked + .app .mark,
-[type="checkbox"]:checked + .app .battery{
+#switch:checked + .app .arrow,
+#switch:checked + .app .mark,
+#switch:checked + .app .battery{
   background-color: white;
 }
-[type="checkbox"]:checked + .app .network{
-  border-color: transparent transparent white transparent;
-}
-[type="checkbox"]:checked + .app .swipe{
+#switch:checked + .app .swipe{
   background-color: #34323D;
   opacity: 1;
 }
 
-.login-hidden {
+.hidden {
     visibility: hidden;
+}
+
+#login-box{
+    width: 100%;
+    height: 200px;
+    /* border: 1px dashed red; */
+    margin-top: 20px;
+}
+
+.login-input {
+    width: 90%;
+    height: 30px;
+    border: 2px solid #e7cddf;
+    border-radius: 10px;
+    background-color: inherit;
+    color: inherit;
+    margin-top: 8px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 0.9em;
+}
+#login-check-box {
+    margin-top: 20px;
+    width: 50%;
+    float: left;
+    text-align: left;
+}
+
+#remember-id {
+    border: 1px solid inherit;
+}
+
+#remember-id-chk {
+    font-size: 0.8em;
+}
+
+#login-btn {
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    /* background: linear-gradient(40deg, #FF0080,#FF8C00 70%); */
+    /* background: linear-gradient(20deg, #f767cc,#ffae00 80%); */
+    border: none;
+    background-color: #f8c8e0;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 20px;
 }
