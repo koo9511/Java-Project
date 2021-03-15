@@ -296,6 +296,7 @@ label.toggle-switch {
 
 .hidden {
     visibility: hidden;
+    display: none;
 }
 
 #login-box{
@@ -307,7 +308,7 @@ label.toggle-switch {
 
 .login-input {
     width: 90%;
-    height: 30px;
+    height: 40px;
     border: 2px solid #e7cddf;
     border-radius: 10px;
     background-color: inherit;
@@ -317,18 +318,18 @@ label.toggle-switch {
     padding-right: 7px;
     font-size: 0.9em;
 }
-#login-check-box {
+#login-check-box, #agree-check-box{
     margin-top: 20px;
     width: 50%;
     float: left;
     text-align: left;
 }
 
-#remember-id {
+#remember-id, #agree{
     border: 1px solid inherit;
 }
 
-#remember-id-chk {
+#remember-id-chk, #agree-chk {
     font-size: 0.8em;
 }
 
@@ -345,4 +346,32 @@ label.toggle-switch {
     font-size: 1.1em;
     font-weight: 600;
     margin-top: 20px;
+}
+
+#enroll-content {
+    margin-top: 10px;
+}
+#idCheck{
+    width: 20%; 
+    height: 36px;
+    float: right;
+    background-color: #e7cddf;
+    color: white;
+    border: 2px solid #e7cddf;
+    border-radius: 10px;
+    margin-top: 8px;
+}
+
+#agree-content {
+    resize: none;
+    width: 94%; 
+    height: 60px; 
+    margin-top: 8px;
+    border: 2px solid #e7cddf;
+    border-radius: 10px;
+    color: #34323D;
+}
+
+#enroll-content #login-box{
+    margin-top: 2px;
 }

@@ -22,23 +22,32 @@
 
                     alert(user_id + ", " + user_pw)
                 }
+
+                function change_form(){
+                    $('#login-content').toggleClass('hidden')
+                    $('#enroll-content').toggleClass('hidden')
+
+                    if(!$('#login-content').hasClass('hidden'))
+                        $('.enroll-toggle-button').html('회원가입')
+                    else 
+                        $('.enroll-toggle-button').html('로그인')
+                }
+
             </script>
         </head>
     <body>
         
       <input type="checkbox" id="switch">
-
-      <div class="app">
+      <div class="app" data-aos="zoom-out">
         <div class="body">
           <div class="main-circle"></div>
           <div class="phone">
           <!-- Middle -->
-            <div class="content">
+            <div class="content" id="login-content">
                 <div class="circle">
                     <div class="crescent"></div>
                 </div>
-                
-                <p class="heading">App name</p><br>
+                <p class="heading">With U</p><br>
                 <div id="login-box">
                     <input id="login-id" type="text" class="login-input" placeholder="ID">
                     <input id="login-pwd" type="password" class="login-input" placeholder="PASSWORD">
@@ -52,21 +61,49 @@
 
 
                 <label for="switch" class="toggle-switch">
-                  <div class="toggle"></div>
-                  <div class="names">
+                <div class="toggle"></div>
+                <div class="names">
                     <p class="light">라이트</p>
                     <p class="dark">다크</p>
-                  </div>
+                </div>
                 </label>
+                <!-- choice theme -->
+            </div>
+            <div class="content hidden" id="enroll-content">
+                <p class="heading">회원가입</p><br>
+                <div id="login-box">
+                    <input id="enroll-name" type="text" class="login-input" placeholder="이름">
+                    <input id="enroll-id" type="text" class="login-input" placeholder="아이디" style="width: 70%;">
+                    <button id="idCheck" type="button" class="button btn">체크</button>
+                    <input id="enroll-pwd" type="password" class="login-input" placeholder="비밀번호">
+                    <input id="enroll-pwd-cfm" type="password" class="login-input" placeholder="비밀번호 확인">
+                    <input id="enroll-phone" type="text" class="login-input" placeholder="전화번호">
+                    <input id="enroll-email" type="text" class="login-input" placeholder="이메일">
+
+                    <textarea id="agree-content" readonly>asdasdasdaasdasdasdasdasddasdasdaasdasdasdaasdasdasdasdasddasdasdaasdasdasdaasdasdasdasdasddasdasda
+                    </textarea>
+                    <div id="login-check-box">
+                        <input type="checkbox" id="agree">
+                        <label for="agree" id="agree-chk">약관에 동의합니다.</label>
+                    </div>
+
+                    <button class="button btn" id="login-btn" onclick="try_login()">가입하기</button>
+                </div>
 
 
+                <!-- <label for="switch" class="toggle-switch">
+                <div class="toggle"></div>
+                <div class="names">
+                    <p class="light">라이트</p>
+                    <p class="dark">다크</p>
+                </div>
+                </label> -->
                 <!-- choice theme -->
             </div>
            <!-- Bottom --> 
             <div class="skip">
-              <p>회원가입</p>
+              <p class="enroll-toggle-button" onclick="change_form()">회원가입</p>
               <p>Gunmo<br>Seunghee
-
               </p>
             </div>
           </div>
@@ -75,7 +112,7 @@
 
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
       <script>
-        AOS.init
+        AOS.init();
       </script>
     </body>
     
