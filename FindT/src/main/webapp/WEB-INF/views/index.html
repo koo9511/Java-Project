@@ -14,13 +14,6 @@
         <!-- jquery -->
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
         <script>
-            function try_login(){
-                var user_id = $('#login-id').val()
-                var user_pw = $('#login-pwd').val()
-
-                alert(user_id + ", " + user_pw)
-            }
-
             function change_form(){
                 $('#login-content').toggleClass('hidden')
                 $('#enroll-content').toggleClass('hidden')
@@ -29,6 +22,25 @@
                     $('.enroll-toggle-button').html('회원가입')
                 else 
                     $('.enroll-toggle-button').html('로그인')
+            }
+
+            function validate(){
+                var user_id = $('#login-id').val()
+                var user_pw = $('#login-pwd').val()
+
+                if(user_id == ''){
+                    alert('아이디를 입력해주세요.')
+                    $('#login-id').focus()
+                    return false
+                }
+
+                if(user_pw == ''){
+                    alert('비밀번호를 입력해주세요.')
+                    $('#login-pwd').focus()
+                    return false
+                }
+
+                alert('true')
             }
 
         </script>
@@ -47,14 +59,16 @@
             </div>
             <p class="heading">With U</p><br>
             <div id="login-box">
-                <input id="login-id" type="text" class="login-input" placeholder="아이디">
-                <input id="login-pwd" type="password" class="login-input" placeholder="비밀번호">
-                <div id="login-check-box">
-                    <input type="checkbox" id="remember-id">
-                    <label for="remember-id" id="remember-id-chk">아이디 저장</label>
-                </div>
+                <form action="" onsubmit="return validate()">
+                    <input id="login-id" type="text" class="login-input" placeholder="아이디">
+                    <input id="login-pwd" type="password" class="login-input" placeholder="비밀번호">
+                    <div id="login-check-box">
+                        <input type="checkbox" id="remember-id">
+                        <label for="remember-id" id="remember-id-chk">아이디 저장</label>
+                    </div>
 
-                <button class="button btn" id="login-btn" onclick="try_login()">로그인</button>
+                    <button type="submit" class="button btn" id="login-btn" onclick="try_login()">로그인</button>
+                </form>
             </div>
 
 
@@ -104,7 +118,7 @@
                     </label>
                 </div>
 
-                <button class="button btn" id="login-btn" onclick="try_login()">가입하기</button>
+                <button class="button btn" id="login-btn">가입하기</button>
             </div>
 
 
@@ -120,8 +134,7 @@
         <!-- Bottom --> 
         <div class="skip">
             <p class="enroll-toggle-button" onclick="change_form()">회원가입</p>
-            <p>Gunmo<br>Seunghee
-            </p>
+            <p>이용약관</p>
         </div>
         </div>
     </div>

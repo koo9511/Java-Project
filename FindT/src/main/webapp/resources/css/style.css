@@ -34,6 +34,14 @@ body{
   transform: translate(-50%, -70%)
 }
 
+.main-circle-welcome {
+  height: 100%; 
+  left: auto; 
+  transform: none;
+  border-radius: 0px;
+  background: linear-gradient(20deg, #ff98e0,#fcdb94 80%);
+}
+
 /* Phone */
 .phone {
   position: relative;
@@ -306,6 +314,10 @@ label.toggle-switch {
     color: white;
 }
 
+#switch:checked + .app #agree-chk span {
+  color: #34323D;
+}
+
 .hidden {
     visibility: hidden;
     display: none;
@@ -329,6 +341,7 @@ label.toggle-switch {
     padding-left: 7px;
     padding-right: 7px;
     font-size: 0.9em;
+    font-weight: 600;
 }
 #login-check-box, #agree-check-box{
     margin-top: 8px;
@@ -358,6 +371,7 @@ label.toggle-switch {
     font-size: 1.1em;
     font-weight: 600;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 #enroll-content {
@@ -372,6 +386,8 @@ label.toggle-switch {
     border: 2px solid #f8c8e0;
     border-radius: 10px;
     margin-top: 8px;
+    font-weight: 600;
+    font-size: 15px;
 }
 
 #agree-content {
