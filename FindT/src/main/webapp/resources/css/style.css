@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik');
+@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff');
+
+@font-face {
+  font-family: 'InkLipquid';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') ;
+}
 
 body{
   margin: 0;
@@ -484,3 +490,5 @@ label.toggle-switch {
   #agree:checked + .checkbox .icon::before {
     background: var(--primary);
   }
+  
+  

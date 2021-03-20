@@ -16,13 +16,12 @@
             <!-- jquery -->
             <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
             <script>
-                function try_login(){
-                    var user_id = $('#login-id').val()
-                    var user_pw = $('#login-pwd').val()
-    
-                    alert(user_id + ", " + user_pw)
-                }
-    
+                $(document).ready(function(){
+                    setInterval(function(){
+                        $('.main-circle-welcome').fadeOut()
+                    },2000)
+                });
+
                 function change_form(){
                     $('#login-content').toggleClass('hidden')
                     $('#enroll-content').toggleClass('hidden')
@@ -33,6 +32,25 @@
                         $('.enroll-toggle-button').html('로그인')
                 }
     
+                function validate(){
+                    var user_id = $('#login-id').val()
+                    var user_pw = $('#login-pwd').val()
+    
+                    if(user_id == ''){
+                        alert('아이디를 입력해주세요.')
+                        $('#login-id').focus()
+                        return false
+                    }
+    
+                    if(user_pw == ''){
+                        alert('비밀번호를 입력해주세요.')
+                        $('#login-pwd').focus()
+                        return false
+                    }
+                    
+                    alert('true')
+                }
+    
             </script>
         </head>
     <body>
@@ -40,6 +58,17 @@
         <input type="checkbox" id="switch">
         <div class="app" data-aos="zoom-out">
         <div class="body">
+            <div class="main-circle main-circle-welcome" style="z-index: 10;">
+                <div id="welcome-msg"style="margin-top: 50%; width: 100%; text-align: center; vertical-align: middle; z-index: 10;">
+                    <h2 data-aos="fade-down"  id="intro-korean" style="transition: 1000ms; color: white; font-weight: 600; font-size: 2em;font-family: 'InkLipquid' !important;">
+                        스치면 인연, 스며들면 사랑</h2>
+                    <h4 data-aos="fade-down"  id="intro-korean" style="margin-left: 25%; transition: 1000ms; font-weight: 600; transition-delay: 200ms;color: white; font-family: 'InkLipquid' !important;">- 잠자는 숲속의 공주 -</h4>  
+                        
+                    <br>
+                    <h1  data-aos="fade-up"  style="transition: 1000ms; color: white; transition-delay: 500ms;">With U</h1>
+
+                </div>
+            </div>
             <div class="main-circle"></div>
             <div class="phone">
             <!-- Middle -->
@@ -49,14 +78,16 @@
                 </div>
                 <p class="heading">With U</p><br>
                 <div id="login-box">
-                    <input id="login-id" type="text" class="login-input" placeholder="아이디">
-                    <input id="login-pwd" type="password" class="login-input" placeholder="비밀번호">
-                    <div id="login-check-box">
-                        <input type="checkbox" id="remember-id">
-                        <label for="remember-id" id="remember-id-chk">아이디 저장</label>
-                    </div>
+                    <form action="" onsubmit="return validate()">
+                        <input id="login-id" type="text" class="login-input" placeholder="아이디">
+                        <input id="login-pwd" type="password" class="login-input" placeholder="비밀번호">
+                        <div id="login-check-box">
+                            <input type="checkbox" id="remember-id">
+                            <label for="remember-id" id="remember-id-chk">아이디 저장</label>
+                        </div>
     
-                    <button class="button btn" id="login-btn" onclick="try_login()">로그인</button>
+                        <button type="submit" class="button btn" id="login-btn" onclick="try_login()">로그인</button>
+                    </form>
                 </div>
     
     
@@ -106,7 +137,7 @@
                         </label>
                     </div>
     
-                    <button class="button btn" id="login-btn" onclick="try_login()">가입하기</button>
+                    <button class="button btn" id="login-btn">가입하기</button>
                 </div>
     
     
@@ -122,8 +153,7 @@
             <!-- Bottom --> 
             <div class="skip">
                 <p class="enroll-toggle-button" onclick="change_form()">회원가입</p>
-                <p>Gunmo<br>Seunghee
-                </p>
+                <p>이용약관</p>
             </div>
             </div>
         </div>
