@@ -103,23 +103,22 @@
             <div class="content hidden" id="enroll-content">
                 <p class="heading">회원가입</p><br>
                 <div id="login-box">
-                    <input id="enroll-name" type="text" class="login-input" placeholder="이름">
-                    <input id="enroll-id" type="text" class="login-input" placeholder="아이디" style="width: 70%;">
-                    <button id="idCheck" type="button" class="button btn">체크</button>
-                    <input id="enroll-pwd" type="password" class="login-input" placeholder="비밀번호">
-                    <input id="enroll-pwd-cfm" type="password" class="login-input" placeholder="비밀번호 확인">
-                    <input id="enroll-phone" type="text" class="login-input" placeholder="전화번호">
-                    <input id="enroll-email" type="text" class="login-input" placeholder="이메일">
+                    <h4 class="enroll-desc">아이디로 사용할 이메일을 입력해주세요.</h4>
+                    <input id="enroll-email" type="text" class="login-input enroll-input" placeholder="이메일" style="width: 70%;">
+                    <button id="idCheck" type="button" class="button btn" style="font-size: 0.5em;">전송</button>
+
+                    <h4 class="enroll-desc">이메일로 전송된 인증코드 6자리를 정확하게 입력해주세요.</h4>
+                    <input id="enroll-code" type="text" class="enroll-hidden login-input enroll-input" placeholder="이메일" style="width: 70%;">
+                    <button id="codeCheck" type="button" class="enroll-hidden button btn" style="font-size: 0.5em;">확인</button>
+
+                    <h4 class="enroll-desc">아이디와 함께 사용할 비밀번호를 입력해주세요.</h4>
+                    <input id="enroll-pwd" type="password" class="login-input enroll-input" placeholder="비밀번호">
+
+                    <h4 class="enroll-desc">비밀번호를 한 번 더 입력해주세요.</h4>
+                    <input id="enroll-pwd-cfm" type="password" class="login-input enroll-input" placeholder="비밀번호 확인">
     
-                    <textarea id="agree-content" readonly>서비스를 사용하려면 만 14세 이상이어야 합니다.
-    폭력, 누드, 부분적 누드, 차별, 불법, 침해, 증오, 포르노 또는 선정적인 사진이나 기타 콘텐츠를 서비스를 통해 게시할 수 없습니다.
-    회원님은 본인의 계정을 통해 발생하는 모든 활동에 책임을 지고, 계정, 팔로워, 사용자 이름 또는 기타 계정에 관한 권리를 판매, 이전, 라이선스 또는 양도하지 않을 것에 동의합니다. 고용주나 고객을 대신하여 계정을 만들도록 명시적인 허가를 받은 사람 또는 회사를 제외하고, 'With U'은 이러한 계정 생성을 금지하며 회원님은 본인을 제외한 다른 사람을 위해 계정을 만들지 않을 것에 동의합니다. 또한 회원님은 가입 시 또는 그 외의 기간에 회원님이 'With U'에 제공하는 모든 정보가 사실이고, 정확하며, 최신의 것이며, 완전하다는 점을 진술하고, 사실성과 정확성을 유지하기 위해 필요할 경우 정보를 수정할 것에 동의합니다.
-    회원님은 다른 'With U' 사용자들의 로그인 정보를 요청, 수집 또는 사용하지 않을 것에 동의합니다.
-    회원님은 비밀번호의 기밀성과 안전성을 유지할 책임이 있습니다.
-    회원님은 사람이나 단체를 폄하, 스토킹, 괴롭힘, 악용, 학대, 협박, 사칭 또는 위협할 수 없으며, 서비스를 통해 본인이나 다른 사람의 신용카드 정보, 사회보장번호 또는 그 대신 사용되는 국민 식별 번호, 전체 공개되지 않은 전화번호나 이메일 주소 등 사적인 정보나 기밀 정보를 게시할 수 없습니다.
-    서비스를 불법적으로 또는 승인되지 않은 목적으로 이용할 수 없습니다. 회원님은 저작권법을 포함하되 이에 국한되지 않는, 서비스 및 콘텐츠(아래에 정의) 사용에 적용되는 모든 법률, 규칙, 규정(예: 연방, 주, 도)을 준수할 것에 동의합니다.
-    회원님 본인의 행동, 모든 데이터, 텍스트, 파일, 정보, 사용자 이름, 이미지, 그래픽, 사진, 프로필, 오디오 및 동영상 클립, 사운드, 음악 작업, 저작물, 앱, 링크, 회원님이 서비스에 또는 서비스를 통해 제출, 게시 또는 표시하는 기타 콘텐츠 또는 자료("콘텐츠"로 통칭)에 대해서는 회원님이 전적으로 책임을 집니다.
-    회원님은 서비스 또는 'With U'과 연관되어 있다는 허위 사실을 표시하기 위하여 서비스를 변경, 수정, 각색 또는 개조하거나 다른 웹사이트를 변경, 수정 또는 개조해서는 안 됩니다.
+                    <h4 class="enroll-desc">아래의 이용 약관을 잘 읽고 동의해주세요.</h4>
+                    <textarea id="agree-content" class="enroll-input" readonly>서비스를 사용하려면 만 14세 이상이어야 합니다. 폭력, 누드, 부분적 누드, 차별, 불법, 침해, 증오, 포르노 또는 선정적인 사진이나 기타 콘텐츠를 서비스를 통해 게시할 수 없습니다. 회원님은 본인의 계정을 통해 발생하는 모든 활동에 책임을 지고, 계정, 팔로워, 사용자 이름 또는 기타 계정에 관한 권리를 판매, 이전, 라이선스 또는 양도하지 않을 것에 동의합니다. 고용주나 고객을 대신하여 계정을 만들도록 명시적인 허가를 받은 사람 또는 회사를 제외하고, 'With U'은 이러한 계정 생성을 금지하며 회원님은 본인을 제외한 다른 사람을 위해 계정을 만들지 않을 것에 동의합니다. 또한 회원님은 가입 시 또는 그 외의 기간에 회원님이 'With U'에 제공하는 모든 정보가 사실이고, 정확하며, 최신의 것이며, 완전하다는 점을 진술하고, 사실성과 정확성을 유지하기 위해 필요할 경우 정보를 수정할 것에 동의합니다. 회원님은 다른 'With U' 사용자들의 로그인 정보를 요청, 수집 또는 사용하지 않을 것에 동의합니다. 회원님은 비밀번호의 기밀성과 안전성을 유지할 책임이 있습니다. 회원님은 사람이나 단체를 폄하, 스토킹, 괴롭힘, 악용, 학대, 협박, 사칭 또는 위협할 수 없으며, 서비스를 통해 본인이나 다른 사람의 신용카드 정보, 사회보장번호 또는 그 대신 사용되는 국민 식별 번호, 전체 공개되지 않은 전화번호나 이메일 주소 등 사적인 정보나 기밀 정보를 게시할 수 없습니다. 서비스를 불법적으로 또는 승인되지 않은 목적으로 이용할 수 없습니다. 회원님은 저작권법을 포함하되 이에 국한되지 않는, 서비스 및 콘텐츠(아래에 정의) 사용에 적용되는 모든 법률, 규칙, 규정(예: 연방, 주, 도)을 준수할 것에 동의합니다. 회원님 본인의 행동, 모든 데이터, 텍스트, 파일, 정보, 사용자 이름, 이미지, 그래픽, 사진, 프로필, 오디오 및 동영상 클립, 사운드, 음악 작업, 저작물, 앱, 링크, 회원님이 서비스에 또는 서비스를 통해 제출, 게시 또는 표시하는 기타 콘텐츠 또는 자료("콘텐츠"로 통칭)에 대해서는 회원님이 전적으로 책임을 집니다. 회원님은 서비스 또는 'With U'과 연관되어 있다는 허위 사실을 표시하기 위하여 서비스를 변경, 수정, 각색 또는 개조하거나 다른 웹사이트를 변경, 수정 또는 개조해서는 안 됩니다.
     'With U'이 허용한 방식이 아닌 다른 방식으로 'With U'의 비공개 API에 액세스해서는 안 됩니다. 'With U'의 API 사용에는 별도의 약관이 적용되며, 해당 약관은 여기("API 약관")에서 확인할 수 있습니다.
     원치 않은 이메일, 댓글, 좋아요 또는 다른 형태의 영리적이거나 타인을 괴롭히는 커뮤니케이션("스팸")을 다른 'With U' 사용자를 대상으로 만들거나 전송할 수 없습니다.
     'With U'의 사전 서면 동의 없이 도메인 이름 또는 웹 URL을 사용해서는 안 됩니다.
@@ -153,7 +152,7 @@
             <!-- Bottom --> 
             <div class="skip">
                 <p class="enroll-toggle-button" onclick="change_form()">회원가입</p>
-                <p>kgm</p>
+                <p>With U</p>
             </div>
             </div>
         </div>

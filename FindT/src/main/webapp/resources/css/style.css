@@ -315,9 +315,9 @@ label.toggle-switch {
 }
 
 #switch:checked + .app #agree-content {
-    background-color: #26242E;
+    background-color: #c5d4f5;
     border-color: #c5d4f5;
-    color: white;
+    color: #34323D;
 }
 
 #switch:checked + .app #agree-chk span {
@@ -350,6 +350,7 @@ label.toggle-switch {
     font-weight: 600;
 }
 #login-check-box, #agree-check-box{
+    margin: 0 auto;
     margin-top: 8px;
     height: 15px;
     width: 90%;
@@ -365,12 +366,12 @@ label.toggle-switch {
 }
 
 #login-btn {
-    width: 100%;
+    width: 98%;
     height: 40px;
     bottom: 0;
     /* background: linear-gradient(40deg, #FF0080,#FF8C00 70%); */
     /* background: linear-gradient(20deg, #f767cc,#ffae00 80%); */
-    border: none;
+    border: 2px solid #f8c8e0;
     background-color: #f8c8e0;
     border-radius: 10px;
     color: white;
@@ -383,27 +384,27 @@ label.toggle-switch {
 #enroll-content {
     margin-top: 10px;
 }
-#idCheck{
+#idCheck, #codeCheck{
     width: 20%; 
-    height: 46px;
+    height: 40px;
     float: right;
     background-color: #f8c8e0;
     color: white;
     border: 2px solid #f8c8e0;
     border-radius: 10px;
-    margin-top: 8px;
+    margin-top: 3px;
     font-weight: 600;
     font-size: 15px;
 }
 
 #agree-content {
     resize: none;
-    width: 94%; 
+    width: 90%; 
     height: 60px; 
-    margin-top: 8px;
     border: 2px solid #e7cddf;
     border-radius: 10px;
     color: #34323D;
+    padding: 1px 7px;
 }
 
 #enroll-content #login-box{
@@ -421,6 +422,7 @@ label.toggle-switch {
     padding: 10px;
     background: #F1F8E9;
     border-radius: 10px;
+    height: 30px;
   }
   
 .checkbox {
@@ -489,6 +491,24 @@ label.toggle-switch {
   
   #agree:checked + .checkbox .icon::before {
     background: var(--primary);
+  }
+
+  .enroll-desc {
+    font-size: 0.5em;
+    text-align: left;
+    margin: 0px;
+    margin-left: 5px;
+    margin-top: 15px;
+    float: left;
+    color: #3c3b3d;
+  }
+
+  .enroll-input {
+    margin-top: 3px;
+  }
+
+  .enroll-input:not(textarea){
+    height: 35px !important;
   }
   
   
