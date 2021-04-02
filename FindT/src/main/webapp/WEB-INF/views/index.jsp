@@ -153,7 +153,7 @@
             <!-- Bottom --> 
             <div class="skip">
                 <p class="enroll-toggle-button" onclick="change_form()">회원가입</p>
-                <p>이용약관</p>
+                <p>kgm</p>
             </div>
             </div>
         </div>
