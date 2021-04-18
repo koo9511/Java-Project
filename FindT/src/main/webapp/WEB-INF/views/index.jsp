@@ -48,7 +48,7 @@
                         return false
                     }
                     
-                    alert('true')
+                    return true
                 }
     
             </script>
@@ -78,7 +78,7 @@
                 </div>
                 <p class="heading">With U</p><br>
                 <div id="login-box">
-                    <form action="" onsubmit="return validate()">
+                    <form action="index" onsubmit="return validate()">
                         <input id="login-id" type="text" class="login-input" placeholder="아이디">
                         <input id="login-pwd" type="password" class="login-input" placeholder="비밀번호">
                         <div id="login-check-box">

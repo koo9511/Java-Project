@@ -19,8 +19,6 @@ body{
   width: 100vw;
   height: 100vh;
   background-color: #fff;
-  overflow: hidden;
-  display: flex;
   justify-content: center;
   align-items: center;
   transition: background-color .2s;
@@ -29,15 +27,10 @@ body{
 
 /* Main Circle */
 .main-circle {
-  width: 40rem;
-  height: 40rem;
-  border-radius: 100%;
-  /* background: linear-gradient(40deg, #FF0080,#FF8C00 70%); */
-  background: linear-gradient(20deg, #ff98e0,#fcdb94 95%);
-  position: absolute;
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(0deg, white,#fcdff3 100%);
   z-index: 1;
-  left: 50%;
-  transform: translate(-50%, -70%)
 }
 
 .main-circle-welcome {
@@ -45,18 +38,16 @@ body{
   left: auto; 
   transform: none;
   border-radius: 0px;
-  background: linear-gradient(20deg, #ff98e0,#fcdb94 95%);
+  background: linear-gradient(20deg, #ff98e0,#fcdb94 80%);
 }
 
 /* Phone */
 .phone {
   position: relative;
   z-index: 2;
-  width: 21rem;
+  width: 100%;
   height: 45rem;
   background-color: inherit;
-  box-shadow: 0 4px 35px rgba(0,0,0,.1);
-  border-radius: 40px;
   display: flex;
   flex-direction: column;
 }
@@ -113,7 +104,7 @@ body{
   width: 8rem;
   height: 8rem;
   /* background: linear-gradient(40deg, #FF0080,#FF8C00 70%); */
-  background: linear-gradient(20deg, #ff98e0,#fcdb94 95%);
+  background: linear-gradient(20deg, #ff98e0,#fcdb94 80%);
   margin: auto;
 }
 .crescent {
@@ -284,7 +275,7 @@ label.toggle-switch {
   background: linear-gradient(40deg, #8983F7, #A3DAFB 70%);
 }
 #switch:checked + .app .main-circle{
-  background: linear-gradient(40deg, #8983F7, #A3DAFB 70%);
+  background: linear-gradient(0deg, #26242E,#b6caff 100%);
 }
 /* lgoin */
 #switch:checked + .app .login-input {
@@ -371,7 +362,7 @@ label.toggle-switch {
     height: 40px;
     bottom: 0;
     /* background: linear-gradient(40deg, #FF0080,#FF8C00 70%); */
-    /* background: linear-gradient(20deg, #f767cc,#ffae00 80%); */
+    /* background: linear-gradient(20deg, #ff98e0,#fcdb94 80%); */
     border: 2px solid #f8c8e0;
     background-color: #f8c8e0;
     border-radius: 10px;
@@ -513,3 +504,20 @@ label.toggle-switch {
   }
   
   
+  .sticky {
+    height: 48px; 
+    width: 100%; 
+    border: 1px dashed skyblue; 
+    position: -webkit-sticky;
+    position: sticky; 
+    top: 100px;
+    z-index: 10;
+    background-color: white;
+  }
+
+  #myinfo {
+    height: 248px; 
+    width: 100%; 
+    border: 1px dashed green;
+    text-align: center;
+  }

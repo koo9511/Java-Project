@@ -26,6 +26,13 @@ public class UserController {
 		return mv;
 	}
 	
+	@RequestMapping("index")
+	public ModelAndView IndexMethod(HttpSession session, ModelAndView mv) {
+
+		mv.setViewName("main");
+		
+		return mv;
+	}
 	
 	
 }
