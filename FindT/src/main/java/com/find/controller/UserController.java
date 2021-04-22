@@ -29,7 +29,7 @@ public class UserController {
 	@RequestMapping("index")
 	public ModelAndView IndexMethod(HttpSession session, ModelAndView mv) {
 
-		mv.setViewName("main");
+		mv.setViewName("contents/index");
 		
 		return mv;
 	}
