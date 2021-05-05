@@ -5,11 +5,6 @@
   font-weight: normal;
   font-style: normal;
 }
-/* =======================================================
-*
-* 	Template Style 
-*
-* ======================================================= */
 body {
   font-family: "Lato", Arial, sans-serif;
   font-weight: 400;
@@ -17,6 +12,10 @@ body {
   line-height: 1.7;
   color: #777;
   background: #fff;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 #page {
@@ -239,6 +238,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #gtco-header {
   background: #4d4d4d;
+  height: 100vh;
 }
 @media screen and (max-width: 992px) {
   #gtco-header.gtco-cover {
@@ -1715,7 +1715,7 @@ form label {
   -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.18);
   -ms-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.18);
   -o-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.18);
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.18);
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.18);
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
@@ -1725,10 +1725,11 @@ form label {
   transition: 0.3s;
 }
 .fh5co-card-item figure {
-  height: 240px;
+  height: 300px;
   overflow: hidden;
   z-index: 12;
   position: relative;
+  padding: 10px;
 }
 .fh5co-card-item figure .overlay {
   opacity: 0;
@@ -1777,15 +1778,15 @@ form label {
   left: 0;
   width: 103%;
   margin-left: -4px;
-  height: 50px;
+  height: 0px;
   z-index: -1;
   content: "";
   background: #fff;
-  -webkit-transform: rotate(4deg);
+  /* -webkit-transform: rotate(4deg);
   -moz-transform: rotate(4deg);
   -ms-transform: rotate(4deg);
   -o-transform: rotate(4deg);
-  transform: rotate(4deg);
+  transform: rotate(4deg); */
 }
 .fh5co-card-item .fh5co-text h2, .fh5co-card-item .fh5co-text span {
   text-decoration: none !important;
@@ -1811,7 +1812,7 @@ form label {
   opacity: 1;
   visibility: visible;
   bottom: 0;
-  font-size: 30px;
+  font-size: 15px;
   color: #FBB448;
   position: relative;
   -webkit-transition: 0.5s;
@@ -1956,4 +1957,17 @@ form label {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+.gallery-all {
+  background-color: #FBB448;
+  float: right;
+  margin-right: 15px;
+  color: white;
+  padding: 8px;
+  font-size: 0.9em;
+}
+
+.gallery-all:hover {
+  color: white;
+  background-color: #444;
+}
+
