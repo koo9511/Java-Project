@@ -5,11 +5,8 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Savory &mdash; Free Website Template, Free HTML5 Template by GetTemplates.co</title>
+	<title>With U &mdash; 당신의 순간들을 이쁘게 담아줄게요.</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by GetTemplates.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="GetTemplates.co" />
 
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
@@ -17,7 +14,6 @@
 	<meta property="og:url" content=""/>
 	<meta property="og:site_name" content=""/>
 	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
 	<meta name="twitter:image" content="" />
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
@@ -63,26 +59,25 @@
 
 	
 	<!-- <div class="page-inner"> -->
-	<nav class="gtco-nav" role="navigation">
+	<nav class="gtco-nav" role="navigation" style="position: fixed; background-color: rgba(0, 0, 0, 0.5);">
 		<div class="gtco-container">
 			
 			<div class="row">
 				<div class="col-sm-4 col-xs-12">
-					<div id="gtco-logo"><a href="index">With <em>U</em></a></div>
+					<div id="gtco-logo"><a href="index.html">With <em>U</em></a></div>
 				</div>
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
-						<li><a href="menu.html">Menu</a></li>
+						<li><a href="menu.html">내 정보</a></li>
 						<li class="has-dropdown">
-							<a href="services.html">Services</a>
+							<a href="services.html">갤러리</a>
 							<ul class="dropdown">
-								<li><a href="#">Food Catering</a></li>
-								<li><a href="#">Wedding Celebration</a></li>
-								<li><a href="#">Birthday's Celebration</a></li>
+								<li><a href="#">날짜별</a></li>
+								<li><a href="#">카테고리별</a></li>
 							</ul>
 						</li>
-						<li><a href="contact.html">Contact</a></li>
-						<li class="btn-cta"><a href="#"><span>Reservation</span></a></li>
+						<li><a href="contact.html">1:1 문의</a></li>
+						<li class="btn-cta"><a href="#"><span>로그아웃</span></a></li>
 					</ul>	
 				</div>
 			</div>
@@ -90,7 +85,7 @@
 		</div>
 	</nav>
 	
-	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
+	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(resources/contents/images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="gtco-container">
 			<div class="row">
@@ -99,8 +94,8 @@
 
 					<div class="row row-mt-15em">
 						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
-							<span class="intro-text-small">항상 너의 곁에 있을게 <a href="https://koo9511.github.io" target="_blank">koogunmo</a></span>
-							<h1 class="cursive-font">Good Day!</h1>	
+							<span class="intro-text-small">행복하쟝 <a href="https://koo9511.github.io" target="_blank">mypage</a></span>
+							<h1 class="cursive-font">Good day!</h1>	
 						</div>
 						<!-- <div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
 							<div class="form-wrap">
@@ -162,97 +157,87 @@
 	<div class="gtco-section">
 		<div class="gtco-container">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2 class="cursive-font primary-color">Popular Dishes</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading" style="margin-bottom: 2em;">
+					<h2 class="cursive-font primary-color">Gallery</h2>
 				</div>
 			</div>
 			<div class="row">
-
 				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="images/img_1.jpg" class="fh5co-card-item image-popup">
+					<a href="resources/contents/images/sample_1.jpeg" class="fh5co-card-item image-popup">
 						<figure>
-							<div class="overlay"><i class="ti-plus"></i></div>
-							<img src="images/img_1.jpg" alt="Image" class="img-responsive">
+							<div class="overlay"><i class="icon-magnifying-glass"></i></div>
+							<img src="resources/contents/images/sample_1.jpeg" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
-							<h2>Fresh Mushrooms</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
-							<p><span class="price cursive-font">$19.15</span></p>
+							<p><span class="price cursive-font">2021/05/15</span></p>
+							<h2>여긴 대전 ㅎㅎ</h2>
 						</div>
 					</a>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="images/img_2.jpg" class="fh5co-card-item image-popup">
+					<a href="resources/contents/images/sample_2.jpeg" class="fh5co-card-item image-popup">
 						<figure>
-							<div class="overlay"><i class="ti-plus"></i></div>
-							<img src="images/img_2.jpg" alt="Image" class="img-responsive">
+							<div class="overlay"><i class="icon-magnifying-glass"></i></div>
+							<img src="resources/contents/images/sample_2.jpeg" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
-							<h2>Cheese and Garlic Toast</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
-							<p><span class="price cursive-font">$20.99</span></p>
+							<p><span class="price cursive-font">2021/05/15</span></p>
+							<h2>눈이 왔어요~</h2>
 						</div>
 					</a>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="images/img_3.jpg" class="fh5co-card-item image-popup">
+					<a href="resources/contents/images/sample_3.jpeg" class="fh5co-card-item image-popup">
 						<figure>
-							<div class="overlay"><i class="ti-plus"></i></div>
-							<img src="images/img_3.jpg" alt="Image" class="img-responsive">
+							<div class="overlay"><i class="icon-magnifying-glass"></i></div>
+							<img src="resources/contents/images/sample_3.jpeg" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
-							<h2>Grilled Chiken Salad</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
-							<p><span class="price cursive-font">$8.99</span></p>
-
+							<p><span class="price cursive-font">2021/05/15</span></p>
+							<h2>우리 나라에서 은하를 볼 수 있다니!?</h2>
 						</div>
 					</a>
 				</div>
 
 
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="images/img_4.jpg" class="fh5co-card-item image-popup">
+				<div class="col-lg-4 col-md-4 col-sm-6 for-pc">
+					<a href="resources/contents/images/sample_4.jpeg" class="fh5co-card-item image-popup">
 						<figure>
-							<div class="overlay"><i class="ti-plus"></i></div>
-							<img src="images/img_4.jpg" alt="Image" class="img-responsive">
+							<div class="overlay"><i class="icon-magnifying-glass"></i></div>
+							<img src="resources/contents/images/sample_4.jpeg" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
-							<h2>Organic Egg</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
-							<p><span class="price cursive-font">$12.99</span></p>
+							<p><span class="price cursive-font">2021/05/15</span></p>
+							<h2>육교에서 후다닥!</h2>
 						</div>
 					</a>
 				</div>
 
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="images/img_5.jpg" class="fh5co-card-item image-popup">
+				<div class="col-lg-4 col-md-4 col-sm-6 for-pc">
+					<a href="resources/contents/images/sample_5.jpeg" class="fh5co-card-item image-popup">
 						<figure>
-							<div class="overlay"><i class="ti-plus"></i></div>
-							<img src="images/img_5.jpg" alt="Image" class="img-responsive">
+							<div class="overlay"><i class="icon-magnifying-glass"></i></div>
+							<img src="resources/contents/images/sample_5.jpeg" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
-							<h2>Tomato Soup with Chicken</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
-							<p><span class="price cursive-font">$23.10</span></p>
+							<p><span class="price cursive-font">2021/05/15</span></p>
+							<h2>이천 시몬스테라스</h2>
 						</div>
 					</a>
 				</div>
 
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="images/img_6.jpg" class="fh5co-card-item image-popup">
+				<div class="col-lg-4 col-md-4 col-sm-6 for-pc">
+					<a href="resources/contents/images/sample_6.jpeg" class="fh5co-card-item image-popup">
 						<figure>
-							<div class="overlay"><i class="ti-plus"></i></div>
-							<img src="images/img_6.jpg" alt="Image" class="img-responsive">
+							<div class="overlay"><i class="icon-magnifying-glass"></i></div>
+							<img src="resources/contents/images/sample_6.jpeg" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
-							<h2>Salad with Crispy Chicken</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
-							<p><span class="price cursive-font">$5.59</span></p>
+							<p><span class="price cursive-font">2021/05/15</span></p>
+							<h2>명동 여행~</h2>
 						</div>
 					</a>
 				</div>
-
 			</div>
 		</div>
 	</div>
@@ -261,64 +246,25 @@
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-					<h2 class="cursive-font">Our Services</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					<h2 class="cursive-font">Calendar</h2>
 				</div>
 			</div>
+			<!-- 달력 넣을거임 -->
 			<div class="row">
-				<div class="col-md-4 col-sm-6">
-					<div class="feature-center animate-box" data-animate-effect="fadeIn">
-						<span class="icon">
-							<i class="ti-face-smile"></i>
-						</span>
-						<h3>Happy People</h3>
-						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="feature-center animate-box" data-animate-effect="fadeIn">
-						<span class="icon">
-							<i class="ti-thought"></i>
-						</span>
-						<h3>Creative Culinary</h3>
-						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="feature-center animate-box" data-animate-effect="fadeIn">
-						<span class="icon">
-							<i class="ti-truck"></i>
-						</span>
-						<h3>Food Delivery</h3>
-						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					</div>
-				</div>
 				
-
 			</div>
 		</div>
 	</div>
 
 
-	<div class="gtco-cover gtco-cover-sm" style="background-image: url(images/img_bg_1.jpg)"  data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="gtco-container text-center">
-			<div class="display-t">
-				<div class="display-tc">
-					<h1>&ldquo; Their high quality of service makes me back over and over again!&rdquo;</h1>
-					<p>&mdash; John Doe, CEO of XYZ Co.</p>
-				</div>	
-			</div>
-		</div>
-	</div>
 
 	<div id="gtco-counter" class="gtco-section">
 		<div class="gtco-container">
 
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-					<h2 class="cursive-font primary-color">Fun Facts</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					<h2 class="cursive-font primary-color">Our Moments</h2>
+					<p>통계 내줄거임 여기다가</p>
 				</div>
 			</div>
 
@@ -327,93 +273,57 @@
 				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
 					<div class="feature-center">
 						<span class="counter js-counter" data-from="0" data-to="5" data-speed="5000" data-refresh-interval="50">1</span>
-						<span class="counter-label">Avg. Rating</span>
+						<span class="counter-label">데이트 횟수</span>
 
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
 					<div class="feature-center">
 						<span class="counter js-counter" data-from="0" data-to="43" data-speed="5000" data-refresh-interval="50">1</span>
-						<span class="counter-label">Food Types</span>
+						<span class="counter-label">사진 업로드</span>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
 					<div class="feature-center">
 						<span class="counter js-counter" data-from="0" data-to="32" data-speed="5000" data-refresh-interval="50">1</span>
-						<span class="counter-label">Chef Cook</span>
+						<span class="counter-label">남은 기념일까지</span>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
 					<div class="feature-center">
-						<span class="counter js-counter" data-from="0" data-to="1985" data-speed="5000" data-refresh-interval="50">1</span>
-						<span class="counter-label">Year Started</span>
-
+						<span class="counter js-counter" data-from="0" data-to="363" data-speed="5000" data-refresh-interval="50">1</span>
+						<span class="counter-label">우리가 사랑한지</span>
 					</div>
 				</div>
 					
 			</div>
 		</div>
 	</div>
-
-	
-
-	<div id="gtco-subscribe">
-		<div class="gtco-container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2 class="cursive-font">Subscribe</h2>
-					<p>Be the first to know about the new templates.</p>
-				</div>
-			</div>
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2">
-					<form class="form-inline">
-						<div class="col-md-6 col-sm-6">
-							<div class="form-group">
-								<label for="email" class="sr-only">Email</label>
-								<input type="email" class="form-control" id="email" placeholder="Your Email">
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6">
-							<button type="submit" class="btn btn-default btn-block">Subscribe</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<footer id="gtco-footer" role="contentinfo" style="background-image: url(images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
+	<footer id="gtco-footer" role="contentinfo" style="background-image: url(resources/contents/images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="gtco-container">
 			<div class="row row-pb-md">
-
-				
-
-				
 				<div class="col-md-12 text-center">
 					<div class="gtco-widget">
-						<h3>Get In Touch</h3>
+						<h3>Contact Me</h3>
 						<ul class="gtco-quick-contact">
-							<li><a href="#"><i class="icon-phone"></i> +1 234 567 890</a></li>
-							<li><a href="#"><i class="icon-mail2"></i> info@GetTemplates.co</a></li>
-							<li><a href="#"><i class="icon-chat"></i> Live Chat</a></li>
+							<li><a href="#"><i class="icon-phone"></i>010 - 2565 - 3871</a></li>
+							<li><a href="#"><i class="icon-mail2"></i>gunmo9511@gmail.com</a></li>
 						</ul>
 					</div>
 					<div class="gtco-widget">
-						<h3>Get Social</h3>
+						<h3>Social</h3>
 						<ul class="gtco-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
 							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
+							<li><a href="#"><i class="icon-github"></i></a></li>
 						</ul>
 					</div>
 				</div>
 
 				<div class="col-md-12 text-center copyright">
-					<p><small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://gettemplates.co/" target="_blank">GetTemplates.co</a> Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a></small></p>
+					<p><small class="block">&copy; 2021 KooGunMo. All Rights Reserved.</small> 
+						<small class="block">Designed by <a href="https://koo9511.github.io" target="_blank">Koogunmo</a></small></p>
 				</div>
 
 			</div>
@@ -459,4 +369,6 @@
 
 	</body>
 </html>
+
+
 

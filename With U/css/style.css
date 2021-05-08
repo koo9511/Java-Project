@@ -1217,6 +1217,7 @@ form label {
   height: 25px;
   cursor: pointer;
   text-decoration: none;
+  position: fixed !important;
 }
 .gtco-nav-toggle.active i::before, .gtco-nav-toggle.active i::after {
   background: #444;
@@ -1224,6 +1225,7 @@ form label {
 .gtco-nav-toggle:hover, .gtco-nav-toggle:focus, .gtco-nav-toggle:active {
   outline: none;
   border-bottom: none !important;
+  position: fixed;
 }
 .gtco-nav-toggle i {
   position: relative;
