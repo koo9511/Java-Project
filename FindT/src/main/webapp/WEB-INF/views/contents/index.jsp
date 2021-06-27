@@ -61,7 +61,6 @@
 	<!-- <div class="page-inner"> -->
 	<nav class="gtco-nav" role="navigation" style="position: fixed; background-color: rgba(0, 0, 0, 0.5);">
 		<div class="gtco-container">
-			
 			<div class="row">
 				<div class="col-sm-4 col-xs-12">
 					<div id="gtco-logo"><a href="index.html">With <em>U</em></a></div>

@@ -113,6 +113,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 0;
   text-transform: uppercase;
   font-weight: bold;
+  margin-top: 30px !important;
 }
 .gtco-nav #gtco-logo em {
   color: #FBB448;
@@ -1218,6 +1219,7 @@ form label {
   cursor: pointer;
   text-decoration: none;
   position: fixed !important;
+  margin-top: 30px !important;
 }
 .gtco-nav-toggle.active i::before, .gtco-nav-toggle.active i::after {
   background: #444;
