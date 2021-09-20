@@ -14,6 +14,16 @@ body {
   background: #fff;
 }
 
+.hidden {
+  display: none !important;
+}
+
+
+.enroll-email-hidden {
+  display: none !important;
+}
+
+
 ::-webkit-scrollbar {
   display: none;
 }

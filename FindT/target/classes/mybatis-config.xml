@@ -8,8 +8,8 @@
         <setting name="jdbcTypeForNull" value="NULL" />
     </settings>
 	<typeAliases>
-<!-- 		<typeAlias type="com.kh.danim.user.model.vo.User" alias="User" />
- -->		
+  		<typeAlias type="com.find.vo.User_info" alias="User_info" />
+ 		<typeAlias type="com.find.vo.Email_cert" alias="Email_cert" />
 	</typeAliases>
 	  
 	<mappers>

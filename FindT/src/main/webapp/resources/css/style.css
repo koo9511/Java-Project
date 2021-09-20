@@ -294,6 +294,10 @@ label.toggle-switch {
     background: #c5d4f5;
     color: #34323D;
 }
+
+#switch:checked + .app h4 {
+  color: #cbc8ff;
+}
 /* Fab */
 #switch:checked + .app .fab{
   background-color: #34323D;
@@ -366,7 +370,7 @@ label.toggle-switch {
     font-size: 0.8em;
 }
 
-#login-btn {
+#login-btn, #signup-btn {
     width: 98%;
     height: 40px;
     bottom: 0;
@@ -502,6 +506,7 @@ label.toggle-switch {
     margin-top: 15px;
     float: left;
     color: #3c3b3d;
+    /* visibility: hidden; */
   }
 
   .enroll-input {
@@ -512,4 +517,11 @@ label.toggle-switch {
     height: 35px !important;
   }
   
-  
+  .color-red {
+    color: #ff5f5f;
+  }
+
+  .color-blue {
+    color: cornflowerblue !important ;
+    visibility: visible !important;
+  }
