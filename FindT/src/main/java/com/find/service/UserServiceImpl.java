@@ -37,5 +37,10 @@ public class UserServiceImpl implements UserService{
 	public int addUserInfo(User_info userVO) {
 		return userDao.addUserInfo(userVO);
 	}
+
+	@Override
+	public User_info selectUserInfo(String user_id) {
+		return userDao.selectUserInfo(user_id);
+	}
 	
 }

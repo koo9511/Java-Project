@@ -10,9 +10,9 @@
 	</select>
 	
 	<!-- 이메일 인증 키 삭제 -->
-	<delete id="deleteCertKey" parameterType="Email_cert">
+	<delete id="deleteCertKey" parameterType="string">
 		DELETE FROM withu.email_cert
-		WHERE user_email = #{user_email}
+		WHERE user_email = #{value}
 	</delete>
 	
 	<!-- 이메일 인증 키 추가 -->
@@ -45,7 +45,14 @@
 	<!-- 회원가입 -->
 	<insert id="addUserInfo" parameterType="User_info" useGeneratedKeys="true">
 		INSERT INTO user_info (user_code, user_id, user_pw, user_nickname, signup_timestamp, is_active)
-		VALUES (#{user_code}, #{user_id}, #{user_pw}, #{user_nickname}, date_format(now(), '%Y-%m-%dT%H:%i:%S'), is_active)
+		VALUES (#{user_code}, #{user_id}, #{user_pw}, #{user_nickname}, date_format(now(), '%Y-%m-%dT%H:%i:%S'), 1)
 	</insert>
+	
+	<!-- 유저 정보 가져오기 -->
+	<select id="selectUserInfo" parameterType="string" resultType="User_info">
+		SELECT user_code, user_id, user_pw, user_nickname, lastlogin_timestamp, is_active
+		FROM user_info
+		WHERE user_id = #{string} 
+	</select>
 	
 </mapper>

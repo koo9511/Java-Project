@@ -20,5 +20,8 @@ public interface UserService {
 	// 회원가입
 	int addUserInfo(User_info userVO);
 
+	// 유저 정보 가져오기
+	User_info selectUserInfo(String user_id);
+
 
 }

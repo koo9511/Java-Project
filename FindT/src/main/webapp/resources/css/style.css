@@ -293,6 +293,7 @@ label.toggle-switch {
 #switch:checked + .app #login-btn {
     background: #c5d4f5;
     color: #34323D;
+    border: #c5d4f5;
 }
 
 #switch:checked + .app h4 {

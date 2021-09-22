@@ -51,8 +51,32 @@
                         $('#login-pwd').focus()
                         return false
                     }
-                    
-                    return true
+
+                    var checkStatus = false;
+                    $.ajax({
+                        type:'post',
+                        async: false,
+                        data: {
+                            user_id : user_id,
+                            user_pw : user_pw
+                        },
+                        url: "login",
+                        success: function(res){
+                            // 100 : 비밀번호 일치
+                            // 500 : 비밀번호 틀림
+                            // 800 : 계정 비활성화됨
+                            // 900 : 아이디 없음
+                            switch(res){
+                                case "100" : checkStatus = true; break;
+                                case "500" : alert('아이디와 비밀번호가 일치하지 않습니다.');
+                                             $('#login-pwd').focus(); break;
+                                case "800" : alert('계정이 비활성화 되었습니다. 관리자에게 문의하세요.'); break;
+                                default: alert('입력된 정보로 가입된 계정이 없습니다.');
+                            }
+                        }
+                    })
+
+                    return checkStatus;
                 }
 
                 function certValidate(){
@@ -246,22 +270,21 @@
                 <p class="heading">With U</p><br>
                 <div id="login-box">
                     <form action="index" onsubmit="return validate()">
-                        <input id="login-id" type="email" class="login-input" placeholder="아이디">
-                        <input id="login-pwd" type="password" class="login-input" placeholder="비밀번호">
-                        <div id="login-check-box">
+                        <input id="login-id" name="login-id" type="email" class="login-input" placeholder="이메일">
+                        <input id="login-pwd" name="login-pwd" type="password" class="login-input" placeholder="비밀번호">
+                        <!-- <div id="login-check-box">
                             <input type="checkbox" id="remember-id">
                             <label for="remember-id" id="remember-id-chk">아이디 저장</label>
-                        </div>
+                        </div> -->
     
                         <button type="submit" class="button btn" id="login-btn" onclick="try_login()">로그인</button>
                     </form>
                 </div>
     
-    
                 <label for="switch" class="toggle-switch">
-                <div class="toggle"></div>
-                <div class="names">
-                    <p class="light">라이트</p>
+                    <div class="toggle"></div>
+                    <div class="names">
+                        <p class="light">라이트</p>
                     <p class="dark">다크</p>
                 </div>
                 </label>

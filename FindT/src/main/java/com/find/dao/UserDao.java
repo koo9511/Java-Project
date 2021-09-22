@@ -20,7 +20,7 @@ public class UserDao {
 		int res = sqlSession.selectOne("userMapper.selectCertKeyValidate",cert_info);
 		
 		if(res > 0) {
-			res = sqlSession.delete("userMapper.deleteCertKey",cert_info);
+			res = sqlSession.delete("userMapper.deleteCertKey",cert_info.getUser_email());
 		}
 		
 		int ret = sqlSession.insert("userMapper.insertCertKeyInfo",cert_info);
@@ -45,8 +45,13 @@ public class UserDao {
 
 	// 회원가입
 	public int addUserInfo(User_info userVO) {
+		int res = sqlSession.delete("deleteCertKey",userVO.getUser_id());
 		return sqlSession.insert("addUserInfo",userVO);
 	}
 
-
+	// 유저 정보 가져오기
+	public User_info selectUserInfo(String user_id) {
+		return sqlSession.selectOne("selectUserInfo", user_id);
+	}
+	
 }

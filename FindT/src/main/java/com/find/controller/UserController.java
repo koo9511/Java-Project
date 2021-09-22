@@ -40,15 +40,55 @@ public class UserController {
 	UserService userService;
 	
 	@RequestMapping("login")
-	public ModelAndView Login(HttpSession session, ModelAndView mv) {
+	public void Login(@RequestParam("user_id") String user_id, @RequestParam("user_pw") String user_pw,
+			HttpServletResponse response) throws IOException {
+		
+
+		PrintWriter out = response.getWriter();
+		
+		User_info userVO = new User_info();
+		
+		userVO.setUser_id(user_id);
+		
+		BCryptPasswordEncoder decoder = new BCryptPasswordEncoder(10);
+		
+		User_info selectUserInfo = userService.selectUserInfo(user_id);
 		
 		
-		return mv;
+		if(selectUserInfo != null) {
+			
+				
+				String origin_pwd = selectUserInfo.getUser_pw();
+				
+				if(decoder.matches(user_pw, origin_pwd) == true) {
+					if(selectUserInfo.getIs_active() == 1) {
+						out.write("100"); // 비밀번호 일치
+					} else {
+						out.write("800"); // 계정 비활성화됨
+					}
+				} else {
+					out.write("500"); // 비밀번호 틀림
+				}
+
+		} else {
+			out.write("900"); // 아이디 없음
+			
+		}
+		
+		out.flush();
+		out.close();
 	}
 	
 	@RequestMapping("index")
-	public ModelAndView IndexMethod(HttpSession session, ModelAndView mv) {
+	public ModelAndView IndexMethod(HttpSession session, ModelAndView mv, @RequestParam("login-id") String user_id) throws IOException {
 
+		User_info selectUserInfo = userService.selectUserInfo(user_id);
+		
+		session.setAttribute("userCode", selectUserInfo.getUser_code());
+		session.setAttribute("userId", selectUserInfo.getUser_id());
+		session.setAttribute("userCode", selectUserInfo.getUser_code());
+		
+		
 		mv.setViewName("contents/index");
 		
 		return mv;
@@ -62,7 +102,7 @@ public class UserController {
 		// mail server 설정
 		String host = "smtp.naver.com";
 		final String user = "rpfpsrjsah"; // 계정
-		final String password = "Rnrjsah1!";// 패스워드
+		final String password = "!";// 패스워드
 		String resultCd = "100";
 		response.setCharacterEncoding("utf-8");
 
@@ -183,7 +223,6 @@ public class UserController {
 		userVO.setUser_pw(enroll_encoder.encode(user_pw));
 		
 		userVO.setUser_nickname(user_nickname);
-		userVO.setIs_active(1);
 		
 		// 시퀀스 폼 생성
 		String userCode = new GenerateCertCharacter().excuteGenerate();
@@ -210,8 +249,6 @@ public class UserController {
 	    out.write(ret);
 	    out.flush();
 	    out.close();
-				
-		
 		
 	}
 	
