@@ -55,4 +55,9 @@
 		WHERE user_id = #{string} 
 	</select>
 	
+	<!-- 유저 데이터 테이블 추가 -->
+	<update id="createUserDataTable" parameterType="string">
+		${value}
+	</update>
+	
 </mapper>
